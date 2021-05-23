@@ -20,9 +20,11 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('menu_id');
 
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade')->onUpdate('cascade');
 
 
             $table->timestamps();

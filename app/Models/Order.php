@@ -15,7 +15,6 @@ class Order extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    //relacion uno a muchos inversa
     public function client()
     {
         return $this->belongsTo('App\Models\User');
@@ -24,5 +23,16 @@ class Order extends Model
     public function states()
     {
         return $this->belongsToMany('App\Models\State');
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo('App\Models\Menu');
+    }
+
+    //relacion uno a uno polimorfica
+    public function image()
+    {
+        return $this->morphTo(Image::class, 'imageable');
     }
 }
