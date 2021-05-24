@@ -18,7 +18,7 @@ class Menu extends Model
     //relacion uno a uno polimorfica
     public function image()
     {
-        return $this->morphOne('App\Models\Image', 'imageable');
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     //relacion mucho a muchos

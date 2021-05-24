@@ -21,14 +21,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Storage::deleteDirectory('orders');
-        Storage::makeDirectory('orders');
+        Storage::deleteDirectory('menu');
+        Storage::makeDirectory('menu');
 
         $this->call(UserSeeder::class);
         Client::factory(10)->create();
         Role::factory(8)->create();
         State::factory(9)->create();
-        Menu::factory(15)->create();
+        $this->call(MenuSeeder::class);
         $this->call(OrderSeeder::class);
         Category::factory(5)->create();
     }

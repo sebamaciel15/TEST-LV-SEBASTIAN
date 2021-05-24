@@ -22,7 +22,7 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            'url' => 'orders/' . $this->faker->image('public/storage/orders', 640, 480, null, false),
+            'url' => 'menu/' . $this->faker->image('public/storage/menu', 640, 480, null, false),
         ];
     }
 }
