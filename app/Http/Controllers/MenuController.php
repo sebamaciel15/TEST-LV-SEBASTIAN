@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
-use App\Models\Order;
 
 class MenuController extends Controller
 {
@@ -17,7 +16,7 @@ class MenuController extends Controller
 
     public function show(Menu $menu)
     {
-        $similares = Menu::where('category_id', $menu->category_id)
+        $similares = Menu::where('menu_id', $menu->category)
             ->latest('id')
             ->take(4)
             ->get();
