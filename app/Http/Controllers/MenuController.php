@@ -27,4 +27,13 @@ class MenuController extends Controller
 
         return view('menu.show', compact('menu', 'similares'));
     }
+
+    public function category(Category $category)
+    {
+        $menus = Menu::where('category_id', $category->id)
+            ->latest('id')
+            ->paginate(6);
+
+        return view('menu.category', compact('menus', 'category'));
+    }
 }

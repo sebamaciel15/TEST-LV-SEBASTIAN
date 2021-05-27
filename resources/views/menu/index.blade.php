@@ -6,7 +6,7 @@
 
             @foreach ($menues as $menu)
 
-                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url({{asset('/storage/'. $menu->image->url)}})">
+                <article class="bg-white shadow-lg rounded-lg overflow-hidden w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url({{asset('/storage/'. $menu->image->url)}})">
                     {{-- <img src="{{asset('/storage/'. $menu->image->url)}}" alt=""> --}}
                     {{-- no funciona de la siguiente manera y no entiendo por què, investigar. --}}
                     {{-- Storage::url($menu->image->url) --}}
