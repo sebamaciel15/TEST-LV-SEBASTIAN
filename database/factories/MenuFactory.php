@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Menu;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -30,7 +31,7 @@ class MenuFactory extends Factory
             'slug' => Str::slug($name),
             'description' => $this->faker->text(),
             'price' => $this->faker->randomNumber(),
-            'category_id' => random_int(1,5),
+            'category_id' => Category::all()->random()->id,
 
 
         ];

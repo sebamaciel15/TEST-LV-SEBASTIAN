@@ -7,7 +7,7 @@
         </div>
 
         
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-3 gap-6">
 
             {{-- contenido principal --}}
             <div class="col-span-2">
@@ -20,7 +20,18 @@
 
             {{-- contenido relacionado --}}
             <aside>
-                <h1>Más en {{$menu}}</h1>
+                <h1 class="text-2xl font-bold text-gray-600 mb-4">Más en {{$menu->category->name}}</h1>
+
+                <ul>
+                    @foreach ($similares as $similar)
+                        <li class="mb-4">
+                            <a class="flex" href="{{route('menu.show', $similar)}}">
+                                <img class="w-36 h-20 object-cover object-center" src="{{asset('/storage/'. $similar->image->url )}}" alt="">
+                                <span class="ml-2 text-gray-600">{{$similar->name}}</span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </aside>
 
         </div>

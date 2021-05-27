@@ -24,6 +24,7 @@ class Menu extends Model
     //relacion mucho a muchos
     public function category()
     {
-        return Category::find($this->category_id)->name;
+        return $this->belongsTo('App\Models\Category');
+        /* return Category::find($this->category_id)->name; */
     }
 }

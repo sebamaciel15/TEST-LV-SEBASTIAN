@@ -9,8 +9,11 @@ class Category extends Model
 {
     use HasFactory;
 
-    
 
-    //relacion mucho a muchos inversa
 
+    //relacion mucho a muchos
+    public function menus()
+    {
+        return $this->hasMany('App\Models\Menu');
+    }
 }

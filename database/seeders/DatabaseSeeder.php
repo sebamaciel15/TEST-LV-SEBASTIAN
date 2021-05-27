@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         Storage::deleteDirectory('menu');
         Storage::makeDirectory('menu');
+
         Category::factory(5)->create();
         $this->call(UserSeeder::class);
         Client::factory(10)->create();
@@ -30,6 +31,5 @@ class DatabaseSeeder extends Seeder
         State::factory(9)->create();
         $this->call(MenuSeeder::class);
         $this->call(OrderSeeder::class);
-        
     }
 }

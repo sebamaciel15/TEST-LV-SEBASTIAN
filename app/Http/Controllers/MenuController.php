@@ -18,9 +18,10 @@ class MenuController extends Controller
 
     public function show(Menu $menu)
     {
-        //dd(Menu::all());
-            $similares = Menu::where('category_id', $menu->category)
+        /* dd(Menu::all('category_id', 'id')); */
+        $similares = Menu::where('category_id', $menu->category_id)
             ->latest('id')
+            ->where('id', '!=', $menu->id)
             ->take(4)
             ->get();
 
