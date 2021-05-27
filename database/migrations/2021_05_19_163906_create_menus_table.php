@@ -19,7 +19,13 @@ class CreateMenusTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->unsignedBigInteger('price');
-            $table->timestamps();
+            $table->timestamps();   
+            $table->unsignedBigInteger('category_id');         
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

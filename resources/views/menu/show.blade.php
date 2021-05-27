@@ -20,7 +20,7 @@
 
             {{-- contenido relacionado --}}
             <aside>
-                <h1>Más en {{$menu->category->menu_id}}</h1>
+                <h1>Más en {{$menu}}</h1>
             </aside>
 
         </div>
