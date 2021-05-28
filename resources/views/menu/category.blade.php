@@ -16,7 +16,13 @@
                     {{$menu->description}}
                 </div>
 
+                
+
             </article>
         @endforeach
+
+                <div class="mt-4">
+                    {{$menus->links()}}
+                </div>
     </div>
 </x-app-layout>

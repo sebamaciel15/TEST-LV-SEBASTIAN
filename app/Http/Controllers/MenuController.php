@@ -32,7 +32,7 @@ class MenuController extends Controller
     {
         $menus = Menu::where('category_id', $category->id)
             ->latest('id')
-            ->paginate(6);
+            ->paginate(4);
 
         return view('menu.category', compact('menus', 'category'));
     }
