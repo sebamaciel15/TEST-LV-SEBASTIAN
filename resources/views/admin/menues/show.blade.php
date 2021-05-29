@@ -3,7 +3,7 @@
 @section('title', 'TEST-LV-SEBASTIAN')
 
 @section('content_header')
-    <h1>RESTO</h1>
+    <h1>Mostrar detalle de un menú</h1>
 @stop
 
 @section('content')
