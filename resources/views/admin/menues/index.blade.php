@@ -7,6 +7,15 @@
 @stop
 
 @section('content')
+
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>
+                {{session('info')}}
+            </strong>
+        </div>
+    @endif
+
     <div class="card">
 
         <div class="card-header">
@@ -24,7 +33,7 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($menues as $menu)
+                    @foreach ($menue as $menu)
                         <tr>
                             <td>{{$menu->id}}</td>
                             <td>{{$menu->name}}</td>

@@ -9,7 +9,12 @@ class Menu extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'description', 'price', 'category_id'];
+    protected $fillable = ['name', 'slug', 'description', 'price'];
+
+    /* public function getRouteKeyName()
+    {
+        return "slug";
+    } */
 
     //relacion uno a muchos
     public function orders()

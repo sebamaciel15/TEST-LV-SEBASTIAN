@@ -19,7 +19,7 @@ class CreateMenusTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->unsignedBigInteger('price');
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 
 
