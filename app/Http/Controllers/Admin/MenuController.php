@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 use App\Models\Menu;
@@ -39,7 +40,17 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:menus',
+            'description' => 'required',
+            'price' => 'required',
+            'category_id' => 'exists:App\Models\Menu, category_id',
+        ]);
+
+        $menu = Menu::create($request->all());
+
+        return redirect()->route('admin.menues.edit', $menu);
     }
 
     /**

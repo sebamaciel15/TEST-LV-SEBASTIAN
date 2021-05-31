@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = ['name', 'slug'];
 
     //relacion mucho a muchos
     public function menus()

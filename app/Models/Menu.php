@@ -9,6 +9,8 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug', 'description', 'price', 'category_id'];
+
     //relacion uno a muchos
     public function orders()
     {
