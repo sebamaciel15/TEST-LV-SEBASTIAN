@@ -33,7 +33,7 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($menue as $menu)
+                    @foreach ($menus as $menu)
                         <tr>
                             <td>{{$menu->id}}</td>
                             <td>{{$menu->name}}</td>

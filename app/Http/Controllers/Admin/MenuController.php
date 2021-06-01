@@ -17,9 +17,9 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menue = Menu::all();
+        $menus = Menu::all();
 
-        return view('admin.menues.index', compact('menue'));
+        return view('admin.menues.index', compact('menus'));
     }
 
     /**
@@ -47,9 +47,9 @@ class MenuController extends Controller
             'price' => 'required',
         ]);
 
-        $menu = Menu::create($request->all());
+        $menus = Menu::create($request->all());
 
-        return redirect()->route('admin.menues.edit', $menu)->with('info', 'El menú se creó con éxito');
+        return redirect()->route('admin.menues.edit', $menus)->with('info', 'El menú se creó con éxito');
     }
 
     /**
@@ -58,9 +58,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menue)
+    public function show(Menu $menu)
     {
-        return view('admin.menues.show', compact('menue'));
+        return view('admin.menues.show', compact('menu'));
     }
 
     /**
@@ -69,9 +69,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menue)
+    public function edit(Menu $menu)
     {
-        return view('admin.menues.edit', compact('menue'));
+        return view('admin.menues.edit', compact('menu'));
     }
 
     /**
@@ -81,18 +81,18 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menue)
+    public function update(Request $request, Menu $menu)
     {
         $request->validate([
             'name' => 'required',
-            'slug' => "required|unique:menus,slug,$menue->id",
+            'slug' => "required|unique:menus,slug,$menu->id",
             'description' => 'required',
             'price' => 'required',
         ]);
 
-        $menue->update($request->all());
+        $menu->update($request->all());
 
-        return redirect()->route('admin.menues.edit', $menue)->with('info', 'El menu se actualizo con éxito');
+        return redirect()->route('admin.menues.edit', $menu)->with('info', 'El menu se actualizo con éxito');
     }
 
     /**
@@ -101,9 +101,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menue)
+    public function destroy(Menu $menu)
     {
-        $menue->delete();
+        $menu->delete();
 
         return redirect()->route('admin.menues.index')->with('info', 'El menu se elimino con éxito');
     }

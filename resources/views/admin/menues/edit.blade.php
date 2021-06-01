@@ -16,7 +16,7 @@
 
     <div class="card">
         <div class="card-body">
-            {!! Form::model($menue, ['route' => ['admin.menues.update', $menue], 'method' => 'put']) !!}
+            {!! Form::model($menu, ['route' => ['admin.menues.update', $menu], 'method' => 'put']) !!}
 
                 <div class="form-group">
                     {!! Form::label('name', 'Nombre:') !!}

@@ -11,10 +11,10 @@ class Menu extends Model
 
     protected $fillable = ['name', 'slug', 'description', 'price'];
 
-    /* public function getRouteKeyName()
+    public function getRouteKeyName()
     {
         return "slug";
-    } */
+    }
 
     //relacion uno a muchos
     public function orders()
