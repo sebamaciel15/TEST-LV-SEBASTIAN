@@ -11,9 +11,10 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menues = Menu::latest('id')->paginate(8);
+        $menus = Menu::latest('id')->paginate(8);
 
-        return view('menu.index', compact('menues'));
+        /* dd($menus); */
+        return view('menu.index', compact('menus'));
     }
 
     public function show(Menu $menu)
