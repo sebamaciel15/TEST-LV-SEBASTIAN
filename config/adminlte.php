@@ -255,12 +255,12 @@ return [
         [
             'text' => 'Menues',
             'route'  => 'admin.menues.index',
-            'icon' => 'fab fa-fw fa-buffer',
+            'icon' => 'fas fa-ellipsis-v fa-fw',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Categorías',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text'    => 'multilevel',
